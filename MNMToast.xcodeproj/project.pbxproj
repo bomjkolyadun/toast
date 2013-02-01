@@ -1,0 +1,316 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		57644ADA16BAB31E00EFC3AD /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 57644AD916BAB31E00EFC3AD /* UIKit.framework */; };
+		57644ADC16BAB31E00EFC3AD /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 57644ADB16BAB31E00EFC3AD /* Foundation.framework */; };
+		57644ADE16BAB31E00EFC3AD /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 57644ADD16BAB31E00EFC3AD /* CoreGraphics.framework */; };
+		57644AE416BAB31E00EFC3AD /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 57644AE216BAB31E00EFC3AD /* InfoPlist.strings */; };
+		57644AE616BAB31E00EFC3AD /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 57644AE516BAB31E00EFC3AD /* main.m */; };
+		57644AEA16BAB31E00EFC3AD /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 57644AE916BAB31E00EFC3AD /* AppDelegate.m */; };
+		57644AEC16BAB31E00EFC3AD /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 57644AEB16BAB31E00EFC3AD /* Default.png */; };
+		57644AEE16BAB31E00EFC3AD /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 57644AED16BAB31E00EFC3AD /* Default@2x.png */; };
+		57644AF016BAB31E00EFC3AD /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 57644AEF16BAB31E00EFC3AD /* Default-568h@2x.png */; };
+		57644AF316BAB31E00EFC3AD /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 57644AF216BAB31E00EFC3AD /* ViewController.m */; };
+		57644AF616BAB31E00EFC3AD /* ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 57644AF416BAB31E00EFC3AD /* ViewController.xib */; };
+		57644AFE16BAB33C00EFC3AD /* MNMToast.m in Sources */ = {isa = PBXBuildFile; fileRef = 57644AFD16BAB33C00EFC3AD /* MNMToast.m */; };
+		57644B0016BAB36200EFC3AD /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 57644AFF16BAB36200EFC3AD /* QuartzCore.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		57644AD616BAB31E00EFC3AD /* MNMToast.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MNMToast.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		57644AD916BAB31E00EFC3AD /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		57644ADB16BAB31E00EFC3AD /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		57644ADD16BAB31E00EFC3AD /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		57644AE116BAB31E00EFC3AD /* MNMToast-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "MNMToast-Info.plist"; sourceTree = "<group>"; };
+		57644AE316BAB31E00EFC3AD /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		57644AE516BAB31E00EFC3AD /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		57644AE716BAB31E00EFC3AD /* MNMToast-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "MNMToast-Prefix.pch"; sourceTree = "<group>"; };
+		57644AE816BAB31E00EFC3AD /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		57644AE916BAB31E00EFC3AD /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		57644AEB16BAB31E00EFC3AD /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
+		57644AED16BAB31E00EFC3AD /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
+		57644AEF16BAB31E00EFC3AD /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+		57644AF116BAB31E00EFC3AD /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		57644AF216BAB31E00EFC3AD /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		57644AF516BAB31E00EFC3AD /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/ViewController.xib; sourceTree = "<group>"; };
+		57644AFC16BAB33C00EFC3AD /* MNMToast.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MNMToast.h; sourceTree = "<group>"; };
+		57644AFD16BAB33C00EFC3AD /* MNMToast.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MNMToast.m; sourceTree = "<group>"; };
+		57644AFF16BAB36200EFC3AD /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		57644AD316BAB31E00EFC3AD /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				57644B0016BAB36200EFC3AD /* QuartzCore.framework in Frameworks */,
+				57644ADA16BAB31E00EFC3AD /* UIKit.framework in Frameworks */,
+				57644ADC16BAB31E00EFC3AD /* Foundation.framework in Frameworks */,
+				57644ADE16BAB31E00EFC3AD /* CoreGraphics.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		57644ACD16BAB31E00EFC3AD = {
+			isa = PBXGroup;
+			children = (
+				57644ADF16BAB31E00EFC3AD /* MNMToast */,
+				57644AD816BAB31E00EFC3AD /* Frameworks */,
+				57644AD716BAB31E00EFC3AD /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		57644AD716BAB31E00EFC3AD /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				57644AD616BAB31E00EFC3AD /* MNMToast.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		57644AD816BAB31E00EFC3AD /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				57644AFF16BAB36200EFC3AD /* QuartzCore.framework */,
+				57644AD916BAB31E00EFC3AD /* UIKit.framework */,
+				57644ADB16BAB31E00EFC3AD /* Foundation.framework */,
+				57644ADD16BAB31E00EFC3AD /* CoreGraphics.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		57644ADF16BAB31E00EFC3AD /* MNMToast */ = {
+			isa = PBXGroup;
+			children = (
+				57644AE816BAB31E00EFC3AD /* AppDelegate.h */,
+				57644AE916BAB31E00EFC3AD /* AppDelegate.m */,
+				57644AFC16BAB33C00EFC3AD /* MNMToast.h */,
+				57644AFD16BAB33C00EFC3AD /* MNMToast.m */,
+				57644AF116BAB31E00EFC3AD /* ViewController.h */,
+				57644AF216BAB31E00EFC3AD /* ViewController.m */,
+				57644AF416BAB31E00EFC3AD /* ViewController.xib */,
+				57644AE016BAB31E00EFC3AD /* Supporting Files */,
+			);
+			path = MNMToast;
+			sourceTree = "<group>";
+		};
+		57644AE016BAB31E00EFC3AD /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				57644AE116BAB31E00EFC3AD /* MNMToast-Info.plist */,
+				57644AE216BAB31E00EFC3AD /* InfoPlist.strings */,
+				57644AE516BAB31E00EFC3AD /* main.m */,
+				57644AE716BAB31E00EFC3AD /* MNMToast-Prefix.pch */,
+				57644AEB16BAB31E00EFC3AD /* Default.png */,
+				57644AED16BAB31E00EFC3AD /* Default@2x.png */,
+				57644AEF16BAB31E00EFC3AD /* Default-568h@2x.png */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		57644AD516BAB31E00EFC3AD /* MNMToast */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 57644AF916BAB31E00EFC3AD /* Build configuration list for PBXNativeTarget "MNMToast" */;
+			buildPhases = (
+				57644AD216BAB31E00EFC3AD /* Sources */,
+				57644AD316BAB31E00EFC3AD /* Frameworks */,
+				57644AD416BAB31E00EFC3AD /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = MNMToast;
+			productName = MNMToast;
+			productReference = 57644AD616BAB31E00EFC3AD /* MNMToast.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		57644ACE16BAB31E00EFC3AD /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0460;
+				ORGANIZATIONNAME = "Mario Negro";
+			};
+			buildConfigurationList = 57644AD116BAB31E00EFC3AD /* Build configuration list for PBXProject "MNMToast" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 57644ACD16BAB31E00EFC3AD;
+			productRefGroup = 57644AD716BAB31E00EFC3AD /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				57644AD516BAB31E00EFC3AD /* MNMToast */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		57644AD416BAB31E00EFC3AD /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				57644AE416BAB31E00EFC3AD /* InfoPlist.strings in Resources */,
+				57644AEC16BAB31E00EFC3AD /* Default.png in Resources */,
+				57644AEE16BAB31E00EFC3AD /* Default@2x.png in Resources */,
+				57644AF016BAB31E00EFC3AD /* Default-568h@2x.png in Resources */,
+				57644AF616BAB31E00EFC3AD /* ViewController.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		57644AD216BAB31E00EFC3AD /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				57644AE616BAB31E00EFC3AD /* main.m in Sources */,
+				57644AEA16BAB31E00EFC3AD /* AppDelegate.m in Sources */,
+				57644AF316BAB31E00EFC3AD /* ViewController.m in Sources */,
+				57644AFE16BAB33C00EFC3AD /* MNMToast.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		57644AE216BAB31E00EFC3AD /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				57644AE316BAB31E00EFC3AD /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		57644AF416BAB31E00EFC3AD /* ViewController.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				57644AF516BAB31E00EFC3AD /* en */,
+			);
+			name = ViewController.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		57644AF716BAB31E00EFC3AD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		57644AF816BAB31E00EFC3AD /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		57644AFA16BAB31E00EFC3AD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "MNMToast/MNMToast-Prefix.pch";
+				INFOPLIST_FILE = "MNMToast/MNMToast-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		57644AFB16BAB31E00EFC3AD /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "MNMToast/MNMToast-Prefix.pch";
+				INFOPLIST_FILE = "MNMToast/MNMToast-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		57644AD116BAB31E00EFC3AD /* Build configuration list for PBXProject "MNMToast" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				57644AF716BAB31E00EFC3AD /* Debug */,
+				57644AF816BAB31E00EFC3AD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		57644AF916BAB31E00EFC3AD /* Build configuration list for PBXNativeTarget "MNMToast" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				57644AFA16BAB31E00EFC3AD /* Debug */,
+				57644AFB16BAB31E00EFC3AD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 57644ACE16BAB31E00EFC3AD /* Project object */;
+}
