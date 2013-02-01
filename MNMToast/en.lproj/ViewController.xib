@@ -203,7 +203,7 @@
 						<int key="IBUIContentHorizontalAlignment">0</int>
 						<int key="IBUIContentVerticalAlignment">0</int>
 						<int key="IBUIButtonType">1</int>
-						<string key="IBUINormalTitle">Show three toasts one after another</string>
+						<string key="IBUINormalTitle">Show two toasts one after another</string>
 						<reference key="IBUIHighlightedTitleColor" ref="445357150"/>
 						<reference key="IBUINormalTitleColor" ref="1068092323"/>
 						<reference key="IBUINormalTitleShadowColor" ref="776389346"/>
