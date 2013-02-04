@@ -23,6 +23,16 @@
 
 #import <CoreFoundation/CoreFoundation.h>
 
+/**
+ * Priority of the toasts.
+ */
+typedef enum {
+    
+    MNMToastPriorityNormal = 0, // The toast is added to the end of the queue.
+    MNMToastPriorityHigh // The toast is added at the first position of the queue, to be shown the next one.
+    
+} MNMToastPriority;
+
 @class MNMToastValue;
 
 /**
@@ -59,8 +69,8 @@ typedef void(^MNMToastCompletionHandler)(MNMToastValue *toast, BOOL didDissapear
 /**
  * Object that manages a queue of toast entities, showing a floating view with a text that will be shown at the bottom of the __current view of the application window's root view controller__.
  *
- * **_NOTE_:** if you show another toast before the previous one has been dismissed then the older one will be dismissed 
- * to allow the new one to become visible. This means the toasts does not being stacked one over another.
+ * **_NOTE_:** the toasts does not being stacked one over another if push one before another has been dismissed. If you want to prioritize the showing
+ * of a toast give it Hight priority.
  */
 @interface MNMToast : NSObject
 
@@ -74,6 +84,7 @@ typedef void(^MNMToastCompletionHandler)(MNMToastValue *toast, BOOL didDissapear
  *
  * @param text The text to show.
  * @param autoHide YES to autohide after the fixed delay.
+ * @param priority The priority of the toast
  * @param completionHandler The handler fired when the toast disappears or the user taps on it.
  *
  * **typedef void(^MNMToastCompletionHandler)(MNMToastValue *toast, BOOL didDissapear, BOOL hasBeenTapped);**
@@ -81,9 +92,24 @@ typedef void(^MNMToastCompletionHandler)(MNMToastValue *toast, BOOL didDissapear
  * - toast: The toast value.
  * - hasBeenTapped: YES if the toast did dissapear.
  * - hasBeenTapped: YES if the toast has been tapped.
+ *
+ * **Priority:**
+ *
+ * - MNMToastPriorityNormal: The toast is added to the end of the queue.
+ * - MNMToastPriorityHigh:The toast is added at the first position of the queue, to be shown the next one.
  */
 + (void)showWithText:(NSString *)text
          autoHidding:(BOOL)autoHide
+            priority:(MNMToastPriority)priority
+   completionHandler:(MNMToastCompletionHandler)completionHandler;
+
+/**
+ * Shows a toast with autohide and regular priority.
+ *
+ * @param text The text to show.
+ * @param completionHandler The handler fired when the toast disappears or the user taps on it.
+ */
++ (void)showWithText:(NSString *)text
    completionHandler:(MNMToastCompletionHandler)completionHandler;
 
 /**

@@ -130,6 +130,14 @@ static CGFloat const kTextInset = 5.0f; // Text inset, that is, the margin betwe
     return [[self text] isEqualToString:[another text]];
 }
 
+/*
+ * Returns the object description
+ */
+- (NSString *)description {
+    
+    return [NSString stringWithFormat:@"%@ %@", [super description], [self text]];
+}
+
 @end
 
 #pragma mark -
@@ -148,14 +156,11 @@ static CGFloat const kTextInset = 5.0f; // Text inset, that is, the margin betwe
 @property (nonatomic, readwrite, strong) NSMutableArray *queue;
 
 /*
- * Shows a toast.
- *
- * @param text The text to show.
- * @param autoHide YES to autohide.
- * @param completionHandler The handler to invoke on completion.
+ * Shows a toast
  */
 - (void)showWithText:(NSString *)text
          autoHidding:(BOOL)autoHide
+            priority:(MNMToastPriority)priority
    completionHandler:(MNMToastCompletionHandler)completionHandler;
 
 /*
@@ -227,10 +232,24 @@ static CGFloat const kTextInset = 5.0f; // Text inset, that is, the margin betwe
  */
 + (void)showWithText:(NSString *)text
          autoHidding:(BOOL)autoHide
+            priority:(MNMToastPriority)priority
    completionHandler:(MNMToastCompletionHandler)completionHandler {
     
     [[MNMToast getInstance] showWithText:text
                              autoHidding:autoHide
+                                priority:priority
+                       completionHandler:completionHandler];
+}
+
+/*
+ * Shows a toast with autohide and regular priority.
+ */
++ (void)showWithText:(NSString *)text
+   completionHandler:(MNMToastCompletionHandler)completionHandler {
+    
+    [[MNMToast getInstance] showWithText:text
+                             autoHidding:YES
+                                priority:MNMToastPriorityNormal
                        completionHandler:completionHandler];
 }
 
@@ -249,6 +268,7 @@ static CGFloat const kTextInset = 5.0f; // Text inset, that is, the margin betwe
  */
 - (void)showWithText:(NSString *)text
          autoHidding:(BOOL)autoHide
+            priority:(MNMToastPriority)priority
    completionHandler:(MNMToastCompletionHandler)completionHandler {
     
     if ([text length] > 0) {
@@ -261,7 +281,14 @@ static CGFloat const kTextInset = 5.0f; // Text inset, that is, the margin betwe
         
         if (![queue_ containsObject:value]) {
             
-            [queue_ addObject:value];
+            if (priority == MNMToastPriorityHigh) {
+                
+                [queue_ insertObject:value atIndex:0];
+            
+            } else {
+                
+                [queue_ addObject:value];
+            }
             
             [self showNextToast];
         }
@@ -272,17 +299,11 @@ static CGFloat const kTextInset = 5.0f; // Text inset, that is, the margin betwe
  * Show next toast
  */
 - (void)showNextToast {
-    
-    if ([self isToastVisible]) {
-        
-        [self hide];
-        [NSObject cancelPreviousPerformRequestsWithTarget:self
-                                                 selector:@selector(hide)
-                                                   object:nil];
-        
-    } else if ([queue_ count] > 0) {
+
+    if (![self isToastVisible] && [queue_ count] > 0) {
         
         MNMToastValue *value = [queue_ objectAtIndex:0];
+        [queue_ removeObject:value];
         UIViewController *controller = [[[UIApplication sharedApplication] keyWindow] rootViewController];
         
         if ([controller isKindOfClass:[UITabBarController class]]) {
@@ -328,19 +349,14 @@ static CGFloat const kTextInset = 5.0f; // Text inset, that is, the margin betwe
         
     } completion:^(BOOL finished) {
         
-        if ([queue_ count] > 0) {
+        [toastView_ removeFromSuperview];
+        
+        MNMToastValue *value = [toastView_ value];
+        MNMToastCompletionHandler completionHandler = [value completionHandler];
+        
+        if (completionHandler != nil) {
             
-            [toastView_ removeFromSuperview];
-            
-            MNMToastValue *value = [queue_ objectAtIndex:0];
-            MNMToastCompletionHandler completionHandler = [value completionHandler];
-            
-            if (completionHandler != nil) {
-                
-                completionHandler(value, YES, NO);
-            }
-            
-            [queue_ removeObjectAtIndex:0];
+            completionHandler(value, YES, NO);
         }
         
         [self showNextToast];
@@ -364,15 +380,12 @@ static CGFloat const kTextInset = 5.0f; // Text inset, that is, the margin betwe
  */
 - (void)toastTapped {
     
-    if ([queue_ count] > 0) {
+    MNMToastValue *value = [toastView_ value];
+    MNMToastCompletionHandler completionHandler = [value completionHandler];
+    
+    if (completionHandler != nil) {
         
-        MNMToastValue *value = [queue_ objectAtIndex:0];
-        MNMToastCompletionHandler completionHandler = [value completionHandler];
-        
-        if (completionHandler != nil) {
-            
-            completionHandler(value, NO, YES);
-        }
+        completionHandler(value, NO, YES);
     }
 }
 

@@ -46,6 +46,7 @@
             
             [MNMToast showWithText:[textView_ text]
                        autoHidding:[autohidingSwitch_ isOn]
+                          priority:MNMToastPriorityNormal
                  completionHandler:^(MNMToastValue *toast, BOOL didDissapear, BOOL hasBeenTapped) {
                      
                      if (didDissapear) {
@@ -56,7 +57,6 @@
                      if (hasBeenTapped) {
                          
                          [MNMToast showWithText:@"Toast has been tapped"
-                                    autoHidding:YES
                               completionHandler:nil];
                      }
                      
@@ -68,18 +68,16 @@
      
         } else if (sender == showSeveralButton_) {
             
-            [MNMToast showWithText:@"#1, will be dismissed to show #2 in 2 seconds."
-                       autoHidding:YES
+            [MNMToast showWithText:@"Toast #1/3"
                  completionHandler:nil];
             
-            double delayInSeconds = 2.0;
-            dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, (int64_t)(delayInSeconds * NSEC_PER_SEC));
-            dispatch_after(popTime, dispatch_get_main_queue(), ^(void){
-                
-                [MNMToast showWithText:@"#2, it will last the regular time (3 seconds)."
-                           autoHidding:YES
-                     completionHandler:nil];
-            });
+            [MNMToast showWithText:@"Toast #2/3"
+                 completionHandler:nil];
+            
+            [MNMToast showWithText:@"Toast #3/3 (higher priority than #2)"
+                       autoHidding:YES
+                          priority:MNMToastPriorityHigh
+                 completionHandler:nil];
         }
     };
     
