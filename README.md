@@ -1,6 +1,8 @@
 `MNMToast` is a way to show non-intrusive floating texts at the bottom of the current view. It manages a queue of toast entities, showing a floating view with a text that will be shown at the bottom of the _current view of the application window's root view controller_.
 
-**NOTE:** if you show another toast before the previous one has been dismissed then the older one will be dismissed to allow the new one to become visible. This means the toasts does not being stacked one over another.
+There are two blocks to handle completion (called when hiding animation finishes) and tap (called when a tap over the toast occurs).
+
+ **_NOTE_:** the toasts does not being stacked one over another if push one before the previous has been dismissed or you hide it manually. If you want to prioritize the showing of a toast give it Hight priority.
 
 Installation instructions
 =========================
@@ -9,24 +11,22 @@ Installation instructions
 
 - QuartzCore.
 
-1. Import `MNMToast.h` into the desired classes of your project.
-2. Tou can show a toast this way
+1. Add whole `MNMToast` directory into your project.
+2. You can show a toast this way
 
-		[MNMToast showWithText:textToShow
-                   autoHidding:YES
-             completionHandler:^(MNMToastValue *toast, BOOL didDissapear, BOOL hasBeenTapped) {
+            [MNMToast showWithText:[textView_ text]
+                       autoHidding:[autohidingSwitch_ isOn]
+                          priority:MNMToastPriorityNormal
+                 completionHandler:^(MNMToastValue *toast) {
                      
-                     if (didDissapear) {
-                         
-                         NSLog(@"Toast did dissapear");
-                     }
+                     NSLog(@"Toast did dissapear");
                      
-                     if (hasBeenTapped) {
-                         
-                         [MNMToast showWithText:@"Toast has been tapped"
-                                    autoHidding:YES
-                              completionHandler:nil];
-                     }
+                 } tapHandler:^(MNMToastValue *toast) {
+                     
+                     [MNMToast hide];
+                     [MNMToast showWithText:@"Toast has been tapped"
+                          completionHandler:nil
+                                 tapHandler:nil];
                  }];
 
 3. You can see some examples in `ViewController` class.

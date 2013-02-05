@@ -18,8 +18,11 @@
 		57644AF016BAB31E00EFC3AD /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 57644AEF16BAB31E00EFC3AD /* Default-568h@2x.png */; };
 		57644AF316BAB31E00EFC3AD /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 57644AF216BAB31E00EFC3AD /* ViewController.m */; };
 		57644AF616BAB31E00EFC3AD /* ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 57644AF416BAB31E00EFC3AD /* ViewController.xib */; };
-		57644AFE16BAB33C00EFC3AD /* MNMToast.m in Sources */ = {isa = PBXBuildFile; fileRef = 57644AFD16BAB33C00EFC3AD /* MNMToast.m */; };
 		57644B0016BAB36200EFC3AD /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 57644AFF16BAB36200EFC3AD /* QuartzCore.framework */; };
+		57AEE72A16C00D2800728A96 /* MNMToast.m in Sources */ = {isa = PBXBuildFile; fileRef = 57AEE72916C00D2800728A96 /* MNMToast.m */; };
+		57AEE72D16C00D4000728A96 /* MNMToastView.m in Sources */ = {isa = PBXBuildFile; fileRef = 57AEE72C16C00D4000728A96 /* MNMToastView.m */; };
+		57AEE73016C00DD700728A96 /* MNMToastValue.m in Sources */ = {isa = PBXBuildFile; fileRef = 57AEE72F16C00DD700728A96 /* MNMToastValue.m */; };
+		57AEE73316C0144A00728A96 /* MNMToastConstants.m in Sources */ = {isa = PBXBuildFile; fileRef = 57AEE73216C0144900728A96 /* MNMToastConstants.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -39,9 +42,15 @@
 		57644AF116BAB31E00EFC3AD /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		57644AF216BAB31E00EFC3AD /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		57644AF516BAB31E00EFC3AD /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/ViewController.xib; sourceTree = "<group>"; };
-		57644AFC16BAB33C00EFC3AD /* MNMToast.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MNMToast.h; sourceTree = "<group>"; };
-		57644AFD16BAB33C00EFC3AD /* MNMToast.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MNMToast.m; sourceTree = "<group>"; };
 		57644AFF16BAB36200EFC3AD /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		57AEE72816C00D2800728A96 /* MNMToast.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MNMToast.h; sourceTree = "<group>"; };
+		57AEE72916C00D2800728A96 /* MNMToast.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MNMToast.m; sourceTree = "<group>"; };
+		57AEE72B16C00D4000728A96 /* MNMToastView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MNMToastView.h; sourceTree = "<group>"; };
+		57AEE72C16C00D4000728A96 /* MNMToastView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MNMToastView.m; sourceTree = "<group>"; };
+		57AEE72E16C00DD600728A96 /* MNMToastValue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MNMToastValue.h; sourceTree = "<group>"; };
+		57AEE72F16C00DD700728A96 /* MNMToastValue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MNMToastValue.m; sourceTree = "<group>"; };
+		57AEE73116C0144900728A96 /* MNMToastConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MNMToastConstants.h; sourceTree = "<group>"; };
+		57AEE73216C0144900728A96 /* MNMToastConstants.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MNMToastConstants.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -92,8 +101,7 @@
 			children = (
 				57644AE816BAB31E00EFC3AD /* AppDelegate.h */,
 				57644AE916BAB31E00EFC3AD /* AppDelegate.m */,
-				57644AFC16BAB33C00EFC3AD /* MNMToast.h */,
-				57644AFD16BAB33C00EFC3AD /* MNMToast.m */,
+				57AEE72716C00D2700728A96 /* MNMToast */,
 				57644AF116BAB31E00EFC3AD /* ViewController.h */,
 				57644AF216BAB31E00EFC3AD /* ViewController.m */,
 				57644AF416BAB31E00EFC3AD /* ViewController.xib */,
@@ -114,6 +122,21 @@
 				57644AEF16BAB31E00EFC3AD /* Default-568h@2x.png */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		57AEE72716C00D2700728A96 /* MNMToast */ = {
+			isa = PBXGroup;
+			children = (
+				57AEE72816C00D2800728A96 /* MNMToast.h */,
+				57AEE72916C00D2800728A96 /* MNMToast.m */,
+				57AEE73116C0144900728A96 /* MNMToastConstants.h */,
+				57AEE73216C0144900728A96 /* MNMToastConstants.m */,
+				57AEE72E16C00DD600728A96 /* MNMToastValue.h */,
+				57AEE72F16C00DD700728A96 /* MNMToastValue.m */,
+				57AEE72B16C00D4000728A96 /* MNMToastView.h */,
+				57AEE72C16C00D4000728A96 /* MNMToastView.m */,
+			);
+			path = MNMToast;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -185,7 +208,10 @@
 				57644AE616BAB31E00EFC3AD /* main.m in Sources */,
 				57644AEA16BAB31E00EFC3AD /* AppDelegate.m in Sources */,
 				57644AF316BAB31E00EFC3AD /* ViewController.m in Sources */,
-				57644AFE16BAB33C00EFC3AD /* MNMToast.m in Sources */,
+				57AEE72A16C00D2800728A96 /* MNMToast.m in Sources */,
+				57AEE72D16C00D4000728A96 /* MNMToastView.m in Sources */,
+				57AEE73016C00DD700728A96 /* MNMToastValue.m in Sources */,
+				57AEE73316C0144A00728A96 /* MNMToastConstants.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

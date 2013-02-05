@@ -5,7 +5,7 @@
 <dict>
     <key>--input</key>
     <array>
-        <string>MNMToast/MNMToast.h</string>
+        <string>MNMToast/MNMToast/</string>
     </array>
     <key>--project-name</key>
     <string>MNMToast</string>

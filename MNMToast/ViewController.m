@@ -47,19 +47,16 @@
             [MNMToast showWithText:[textView_ text]
                        autoHidding:[autohidingSwitch_ isOn]
                           priority:MNMToastPriorityNormal
-                 completionHandler:^(MNMToastValue *toast, BOOL didDissapear, BOOL hasBeenTapped) {
+                 completionHandler:^(MNMToastValue *toast) {
                      
-                     if (didDissapear) {
-                         
-                         NSLog(@"Toast did dissapear");
-                     }
+                     NSLog(@"Toast did dissapear");
                      
-                     if (hasBeenTapped) {
-                         
-                         [MNMToast showWithText:@"Toast has been tapped"
-                              completionHandler:nil];
-                     }
+                 } tapHandler:^(MNMToastValue *toast) {
                      
+                     [MNMToast hide];
+                     [MNMToast showWithText:@"Toast has been tapped"
+                          completionHandler:nil
+                                 tapHandler:nil];
                  }];
             
         } else if (sender == hideButton_) {
@@ -69,15 +66,21 @@
         } else if (sender == showSeveralButton_) {
             
             [MNMToast showWithText:@"Toast #1/3"
-                 completionHandler:nil];
+                 completionHandler:nil
+                        tapHandler:nil];
             
             [MNMToast showWithText:@"Toast #2/3"
-                 completionHandler:nil];
+                 completionHandler:^(MNMToastValue *value) {
+                 
+                     NSLog(@"Chain finished.");
+                     
+                 } tapHandler:nil];
             
             [MNMToast showWithText:@"Toast #3/3 (higher priority than #2)"
                        autoHidding:YES
                           priority:MNMToastPriorityHigh
-                 completionHandler:nil];
+                 completionHandler:nil
+                        tapHandler:nil];
         }
     };
     
